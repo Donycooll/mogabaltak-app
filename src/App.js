@@ -22,9 +22,13 @@ import DoctorDashboard from "./pages/Doctor/DoctorDashboard";
 import Consultation from "./pages/Doctor/Consultation";
 
 const ProtectedRoute = ({ children, role }) => {
-  const { user } = useApp();
+  const { user, loading } = useApp(); // افترضت أن عندك loading داخل Context
+
+  if (loading) return <div>Loading...</div>; // مهم جداً لمنع التوجيه العشوائي
+
   if (!user) return <Navigate to="/login" />;
   if (role && user.role !== role) return <Navigate to="/login" />;
+
   return children;
 };
 

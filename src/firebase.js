@@ -4,13 +4,12 @@ import { getMessaging, getToken } from "firebase/messaging";
 
 // بيانات مشروعك من Firebase Console
 const firebaseConfig = {
-  apiKey: "AIzaSyDcnjZlOwAySVHodWIC_CZcHESPK6koGkE",
-  authDomain: "mogabaltak-app.firebaseapp.com",
-  projectId: "mogabaltak-app",
-  storageBucket: "mogabaltak-app.firebasestorage.app",
-  messagingSenderId: "312936177326",
-  appId: "1:312936177326:web:19347d4c74446b5053173f",
-  measurementId: "G-T1LPQBG841",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
 // تشغيل Firebase
